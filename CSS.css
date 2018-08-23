@@ -1,5 +1,18 @@
 table{
     text-align: center;
-    padding: 100px;
-    font-size: x-large;
+    padding-right: 100px;
+    padding-left: 100px;
+    font-size: xx-large;
+    color: white;
+}
+body{
+    background-image: url(https://images2.alphacoders.com/105/105962.jpg);
+}
+h1{
+    color: white;
+}
+input{
+    background-color: transparent;
+    color: white;
+    border-color: white;
 }
