@@ -51,31 +51,18 @@ const cards = [
     { cardNumber: 5, type: 'd' },
     { cardNumber: 3, type: 'd' },
     { cardNumber: 4, type: 'c' } ];
+var button = document.getElementById("button1");
+button.addEventListener("click", );
+
 
 var player1Deck = [];
 var player2Deck = [];
+function winner(){
+    if (player1Deck > player2Deck){
 
-player1Deck = cards.slice();
-player2Deck = player1Deck.splice(1, 26);
-
-var cards = new Array();
-var typeArray = ["s", "d", "c", "h"];
-var cardNumberArray = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"];
-
-for(let i=0; i <typeArray.length; i++)
-{
-    for(let x=0; x <cardNumberArray.length; x++)
-    {
-        let card = {cardNumber: cardNumberArray[x], type: typeArray[i]};
-        cards.push(card);
     }
 }
 
-for (var i=0; i < 10000; i++)
-{
-    let rand1 = Math.floor((Math.random() * cards.length));
-    let rand2 = Math.floor((Math.random() * cards.length));
-    let tmp = cards[rand1];
-    cards[rand1] = cards[rand2];
-    cards[rand2] = tmp;
-}
+
+player1Deck = cards.slice();
+player2Deck = player1Deck.splice(1, 26);
