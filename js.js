@@ -58,8 +58,6 @@ var player2Deck = [];
 
 player1Deck = cards.slice();
 player2Deck = player1Deck.splice(1, 26);
-// console.log(player1Deck);
-// console.log(player2Deck);
 
 function randomShuffle() {
 
@@ -78,36 +76,11 @@ function randomShuffle() {
     } else {
         document.write("Player 1 is the WINNER!")
     }
-console.log(player2Deck);
-    console.log(player1Deck);
 }
+
+console.log(player2Deck);
+console.log(player1Deck);
 
 var button = document.getElementById("button1");
 button.addEventListener("click", randomShuffle);
 console.log(player2Deck);
-
-// for (var i = 0; i < 10000; i++);
-
-// Generate a new set of cards with the code below:
-
-//     var cards  = new Array();
-// var typeArray = ["s", "d", "c", "h"];
-// var cardNumberArray = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"];
-//
-// for(let i=0; i <typeArray.length; i++)
-// {
-//     for(let x=0; x <cardNumberArray.length; x++)
-//     {
-//         let card = {cardNumber: cardNumberArray[x], type: typeArray[i]};
-//         cards.push(card);
-//     }
-// }
-//
-// for (var i=0; i < 10000; i++)
-// {
-//     let rand1 = Math.floor((Math.random() * cards.length));
-//     let rand2 = Math.floor((Math.random() * cards.length));
-//     let tmp = cards[rand1];
-//     cards[rand1] = cards[rand2];
-//     cards[rand2] = tmp;
-// }
