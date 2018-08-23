@@ -58,6 +58,9 @@ var player2Deck = [];
 
 player1Deck = cards.slice();
 player2Deck = player1Deck.splice(1, 26);
+// console.log(player1Deck);
+// console.log(player2Deck);
+var p1score, p2score = 0;
 
 function randomShuffle() {
 
@@ -71,16 +74,92 @@ function randomShuffle() {
     }
     player1Deck = cards.slice();
     player2Deck = player1Deck.splice(1, 26);
-    if (player1Deck[0] < player2Deck[0]) {
-        document.write("Player 2 is the WINNER!")
-    } else {
-        document.write("Player 1 is the WINNER!")
-    }
+    // console.log(player2Deck);
+    // console.log(player1Deck);
+    p1score = 0;
+    p2score = 0;
+    var scorep1 = document.getElementById("score1");
+    var scorep2 = document.getElementById("score2");
+
+// }
+    // function playGame() {
+
+        for (var i = 0; i<player1Deck.length;i++) {
+            if (player1Deck[i].cardNumber < player2Deck[i].cardNumber) {
+                console.log("Player 2 is the WINNER!");
+                Console.log(player1Deck[i].cardNumber + " - " + player2Deck[i].cardNumber);
+                p2score++;
+            }
+            else if (player1Deck[i].cardNumber > player2Deck[i].cardNumber) {
+                console.log("Player 1 is the WINNER!");
+                console.log(player1Deck[i].cardNumber + " - " + player2Deck[i].cardNumber);
+                p1score++;
+            }else {
+                console.log("TIE!")
+
+            }
+        }
+        console.log("Player 1: "+p1score+" Player 2: "+p2score);
+    scorep1.innerText="Score: "+p1score;
+    scorep2.innerText="Score: "+p2score;
+
+
 }
 
-console.log(player2Deck);
-console.log(player1Deck);
 
-var button = document.getElementById("button1");
-button.addEventListener("click", randomShuffle);
-console.log(player2Deck);
+
+
+
+
+
+
+
+
+
+function resetFunction()
+{
+    for (var i = 0; i < 10000; i++)
+    {
+        let rand1 = Math.floor((Math.random() * cards.length));
+        let rand2 = Math.floor((Math.random() * cards.length));
+        let tmp = cards[rand1];
+        cards[rand1] = cards[rand2];
+        cards[rand2] = tmp;
+    }
+    player1Deck = cards.slice();
+    player2Deck = player1Deck.splice(1, 26);
+}
+
+    var button = document.getElementById("button1");
+    button.addEventListener("click", randomShuffle);
+
+    var buttonReset = document.getElementById("resetButton");
+    buttonReset.addEventListener("click",resetFunction);
+
+
+
+// for (var i = 0; i < 10000; i++);
+
+// Generate a new set of cards with the code below:
+
+//     var cards  = new Array();
+// var typeArray = ["s", "d", "c", "h"];
+// var cardNumberArray = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"];
+//
+// for(let i=0; i <typeArray.length; i++)
+// {
+//     for(let x=0; x <cardNumberArray.length; x++)
+//     {
+//         let card = {cardNumber: cardNumberArray[x], type: typeArray[i]};
+//         cards.push(card);
+//     }
+// }
+//
+// for (var i=0; i < 10000; i++)
+// {
+//     let rand1 = Math.floor((Math.random() * cards.length));
+//     let rand2 = Math.floor((Math.random() * cards.length));
+//     let tmp = cards[rand1];
+//     cards[rand1] = cards[rand2];
+//     cards[rand2] = tmp;
+// }
