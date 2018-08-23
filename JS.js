@@ -1,3 +1,4 @@
+var newGame = document.getElementById("gameStart");
 const cards = [
     { cardNumber: 6, type: 'h' },
     { cardNumber: 9, type: 'd' },
@@ -58,7 +59,11 @@ button.addEventListener("click", );
 var player1Deck = [];
 var player2Deck = [];
 function winner(){
-    if (player1Deck > player2Deck){
+    if (player1Deck[0] > player2Deck[0]){
+        document.write("Player 1 Wins!")
+    }
+    else{
+        document.write("Player 2 Wins!")
 
     }
 }
